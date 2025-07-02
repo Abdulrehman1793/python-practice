@@ -1,4 +1,4 @@
-# case #6:-Simple Game Character
+# Case 6:- Simple Game Character
 class GameCharacter:
     def __init__(self, name, health = 100, attack_power = 10):
        self.name = name
