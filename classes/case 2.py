@@ -1,4 +1,4 @@
-#case 2:- bank account management
+# Case 2:- bank account management
 
 class BankAccount:
     def __init__(self, account_number, initial_balance=0):
