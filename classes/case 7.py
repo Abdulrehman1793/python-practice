@@ -1,40 +1,52 @@
-# Case 7:- Restaurant Menu and Orders
+# Case 6:- Simple Game Character
+class GameCharacter:
+    def __init__(self, name, health = 100, attack_power = 10):
+       self.name = name
+       self.health = health
+       self.attack_power = attack_power
+    
+    def take_damage(self , amount):
+        self.health = self.health - amount 
+        if self.health < 0:
+            print(f'{self.name}, "have been defeated"')
+        else:
+            print(self.health)
 
+    def attacking(self, npc_health = 100):
+        npc_health = npc_health - self.attack_power
+        if npc_health < 0:
+            print("character is defeated")
 
-class Restaurant:
-    def __init__(self):
-        self.menu = {}
-        self.order = []
-
-    def add_menu_item(self, name, price):
-        if name in self.menu:
-            print(f"{name} is already exixts")
+    def is_alive(self):
+        if self.health >= 10:
+            print("your character still have courage to fight")
             return
-        self.menu.update({name: price})
+        else:
+         self.health <= 10
+        print("your character need health")
 
-    def print_menu(self):
-        print(self.menu)
+    def display_status(self):
+        print(f'{self.name} " have reamining health "{self.health}')
 
-    def take_order(self, name, quantity):
-        # Handle empty quantity
-        menu = self.menu[name]
-        print(menu)
-        # CASE 1: lookup menu name from menu and validate
-        # CASE 2: Get price of the menu
-        # CASE 3: Update existing order entry by increasing the quantity
-        order_amount = quantity * 40
-        self.order.append({"name": name, "amount": order_amount, "quantity": quantity})
-
-    def print_order(self):
-        print(self.order)
+#example 1
+shadow = GameCharacter("shadow")
+shadow.take_damage(99)
+shadow.display_status()
+shadow.attacking()
+shadow.is_alive()
 
 
-# Exampel 1:
-restaurant = Restaurant()
-restaurant.add_menu_item("Chicken", 99)
-restaurant.add_menu_item("Leg piece", 100)
-# restaurant.print_menu()
-restaurant.take_order("Chicken", 2)
-# restaurant.take_order("lEG PIECE", 4)
-# restaurant.take_order("Cheicken", 1)
-restaurant.print_order()
+#example 2
+khalid = GameCharacter("khalid")
+khalid.take_damage(70)
+khalid.display_status()
+khalid.attacking()
+khalid.is_alive()
+
+
+           
+
+
+
+
+    
