@@ -1,7 +1,6 @@
 # Case 9:-Simple Inventory System
 
 
-from urllib import request
 
 
 class Product:
